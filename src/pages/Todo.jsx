@@ -35,7 +35,7 @@ export default function Todo() {
                 </div>
             ):(
                 <>
-                {/* Header */}
+                {/* if there is a user */}
                 <div className="mb-6 flex items-center justify-between">
                     <div>
                         <h1 className="text-2xl font-extrabold tracking-[-0.03em] text-teal-800">Your Tasks</h1>
@@ -56,6 +56,7 @@ export default function Todo() {
                         <label htmlFor="task" className="text-sm font-semibold text-teal-800">Add Task</label>
                         <input
                             type="text"
+                            required
                             id="task"
                             className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-slate-800 transition-all placeholder:text-slate-300 focus:border-teal-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-400/20"
                             placeholder="What needs to be done?"
