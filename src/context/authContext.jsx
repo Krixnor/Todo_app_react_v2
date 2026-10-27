@@ -7,17 +7,6 @@ function getUsers() { //get existing users if they are any
     return savedUsers ? JSON.parse(savedUsers) : [];
 }
 
-// One-time cleanup: remove old users and todos that used email-based keys
-function clearLegacyData() {
-    if (localStorage.getItem("legacyCleared")) return;
-    localStorage.removeItem("users");
-    localStorage.removeItem("currentUserEmail");
-    Object.keys(localStorage)
-        .filter(key => key.startsWith("todos_"))
-        .forEach(key => localStorage.removeItem(key));
-    localStorage.setItem("legacyCleared", "true");
-}
-clearLegacyData();
 
 function getCurrentUser() {
     const currentUserId = localStorage.getItem("currentUserId");
